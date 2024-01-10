@@ -48,75 +48,80 @@ namespace YinzerHangman
 
             //loop while ? while incorrect >= 5 
             // Condition if user guess full word
-            while (answer.Length > correct || playAgain == "y")
-            {
+            while (answer.Length > correct)
+            { 
                 Console.WriteLine($"Your word is {answer.Length} letters long!");
                 Console.WriteLine();
                 Console.WriteLine("Guess your a letter, or if you know the answer, spell out the whole word!");
 
                 string guess = Console.ReadLine();
 
-                try
+
+                if (guess.Length > 1 && guess.Length == answer.Length)
                 {
-                    if (guess.Length > 1 && guess.Length == answer.Length)
+                    if (guess.ToLower() != answer.ToLower())
                     {
-                        if (guess.ToLower() != answer.ToLower())
-                        {
-                            Console.WriteLine("I'm sorry, that was an incorrect guess!");
-                        }
-                        // They guessed the correct word and win the game.
-                        else
-                        {
-                            Console.WriteLine("You win the game!");
-                            correct = guess.Length;
-                        }
+                        Console.WriteLine("I'm sorry, that was an incorrect guess!");
                     }
-                    //user only guessed a single letter
-                    else if (guess.Length == 1)
+                    // They guessed the correct word and win the game.
+                    else
                     {
-                        foreach (char singleAnswer in answer)
+                        Console.WriteLine("You win the game!");
+                        correct = guess.Length;
+                    }
+                }
+                //user only guessed a single lette
+                else if (guess.Length == 1)
+                {
+                    foreach (char singleAnswer in answer)
+                    {
+                        if (guess.Contains(singleAnswer))
                         {
-                            if (guess.Contains(singleAnswer))
+                            Console.WriteLine($"{guess} was found in the word! Make your next letter guess or enter word!");
+                            correct++;
+                            if (correct == answer.Length)
                             {
-                                Console.WriteLine($"{guess} was found in the word! Make your next letter guess or enter word!");
-                                correct++;
-                                if (correct == answer.Length)
-                                {
-                                    Console.WriteLine($"The word is {answer}. You win!");
-                                }
+                                Console.WriteLine($"The word is {answer}. You win!");
                             }
                         }
-                    }
-                Console.WriteLine("Would you like to play again?");
-                Console.WriteLine();
-                Console.WriteLine("'Y' to play again, 'N' to exit");
-                Console.WriteLine();
-                playAgain = Console.ReadLine();
+                        else if(!guess.Contains(singleAnswer)){
+                            Console.WriteLine("The word doesn't contain that letter!");
+                            incorrect++;
+                        }
 
-                // User will now select 
-                if (playAgain.ToLower() == "y")
-                {
-                    playAgain = "y";
+                    }
                 }
-                // User chose not to play again, exit the screen.
-                else if (playAgain.ToLower() == "n")
+
+            }
+            while (answer.Length == correct || incorrect == 5)
+                
                 {
-                    playAgain = "n";
-                    Console.WriteLine("Thanks for playing, bye!");
-                }
-                // They made an incorrect choice
-                else
-                {
-                    Console.WriteLine("I'm sorry, please enter Y to play again or N to exit");
+                    Console.WriteLine("Would you like to play again?");
+                    Console.WriteLine();
+                    Console.WriteLine("'Y' to play again, 'N' to exit");
                     Console.WriteLine();
                     playAgain = Console.ReadLine();
+
+                    // User will now select 
+                    if (playAgain.ToLower() == "y")
+                    {
+                        playAgain = "y";
+                    }
+                    // User chose not to play again, exit the screen.
+                    else if (playAgain.ToLower() == "n")
+                    {
+                        playAgain = "n";
+                        Console.WriteLine("Thanks for playing, bye!");
+                    }
+                    // They made an incorrect choice
+                    else
+                    {
+                        Console.WriteLine("I'm sorry, please enter Y to play again or N to exit");
+                        Console.WriteLine();
+                        playAgain = Console.ReadLine();
+                    }
                 }
-                }
-                catch
-                {
-                    throw;
-                }
-            }
+
         }
     }
 }
