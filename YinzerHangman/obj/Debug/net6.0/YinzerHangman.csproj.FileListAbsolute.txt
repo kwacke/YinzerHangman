@@ -1,0 +1,15 @@
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\bin\Debug\net6.0\YinzerHangman.exe
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\bin\Debug\net6.0\YinzerHangman.deps.json
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\bin\Debug\net6.0\YinzerHangman.runtimeconfig.json
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\bin\Debug\net6.0\YinzerHangman.dll
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\bin\Debug\net6.0\YinzerHangman.pdb
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\obj\Debug\net6.0\YinzerHangman.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\obj\Debug\net6.0\YinzerHangman.AssemblyInfoInputs.cache
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\obj\Debug\net6.0\YinzerHangman.AssemblyInfo.cs
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\obj\Debug\net6.0\YinzerHangman.csproj.CoreCompileInputs.cache
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\obj\Debug\net6.0\YinzerHangman.dll
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\obj\Debug\net6.0\refint\YinzerHangman.dll
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\obj\Debug\net6.0\YinzerHangman.pdb
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\obj\Debug\net6.0\YinzerHangman.genruntimeconfig.cache
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\obj\Debug\net6.0\ref\YinzerHangman.dll
+C:\Users\Wacker\source\repos\YinzerHangman\YinzerHangman\obj\Debug\net6.0\YinzerHangman.sourcelink.json
