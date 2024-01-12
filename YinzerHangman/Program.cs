@@ -7,7 +7,7 @@ namespace YinzerHangman
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Yinzer Hangman, the game where we take everyday words, spell them in Pittsburghese, and have you guess them before you become hanged!");
+            Console.WriteLine("Welcome to Yinzer Hangman, the game where we take everyday words, spell them in Pittsburghese, and have you guess them before you're hanged!");
 
             string[] yinzWords = {
                 "shahr",
@@ -46,13 +46,12 @@ namespace YinzerHangman
             string playAgain = "";
             //StringBuilder newWord = new StringBuilder(word);
 
-            //loop while ? while incorrect >= 5 
-            // Condition if user guess full word
+            //loop while ? while
             while (answer.Length > correct)
             { 
                 Console.WriteLine($"Your word is {answer.Length} letters long!");
                 Console.WriteLine();
-                Console.WriteLine("Guess your a letter, or if you know the answer, spell out the whole word!");
+                Console.WriteLine("Guess a letter, or if you know the answer, spell out the whole word.");
 
                 string guess = Console.ReadLine();
 
