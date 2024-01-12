@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YinzerHangman")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bae38faeaa31b9273102f3f61ba9cb56cd976a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8308287ee94f67523bf9ef46386ab0707f508d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("YinzerHangman")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YinzerHangman")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

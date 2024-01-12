@@ -10,7 +10,10 @@ namespace YinzerHangman
         {
             static void Main(string[] args)
             {
-                Console.WriteLine("Welcome to Yinzer Hangman, the game where we take everyday words, spell them in Pittsburghese, and have you guess them before you're hanged!");
+                Console.WriteLine("Welcome to Yinzer Hangman, the game where we take everyday words and spell them in Pittsburghese");
+                Console.WriteLine();
+                Console.WriteLine("This is like traditional hangman, guess the word before you're hanged!");
+                Console.WriteLine();
 
                 string[] yinzWords = {
                 "shahr",
@@ -105,16 +108,25 @@ namespace YinzerHangman
                                         numberOfTimes++;
                                         reveal[i] = guess[0];
                                         Console.WriteLine();
+                                        if (answer.Length != correct && numberOfTimes >= 1)
+                                        {
+                                            Console.WriteLine("Correct guess!");
+                                            Console.WriteLine();
+                                            hidden = new string(reveal);
+                                            Console.WriteLine($"{hidden}!");
+                                        }
                                     }
                                 }
                                 if (correct == answer.Length)
                                 {
+                                    Console.WriteLine();
                                     Console.WriteLine("You win!");
+                                    Console.WriteLine();
                                     Console.WriteLine($"The word is {answer}");
+                                    Console.WriteLine();
                                 }
-
-                                hidden = new string(reveal);
-                                Console.WriteLine($"{hidden}!");
+                                
+                               
 
                             }
                         }
@@ -131,6 +143,10 @@ namespace YinzerHangman
                     if (playAgain.ToLower() == "y")
                     {
                         playAgain = "y";
+                        correct = 0;
+                        incorrect = 0;
+                        hasLetter = false;
+                        answer = "";
                     }
                     // User chose not to play again, exit the screen.
                     else if (playAgain.ToLower() == "n")
