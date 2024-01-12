@@ -38,18 +38,20 @@ namespace YinzerHangman
 
             int incorrect = 0;
             int correct = 0;
+            bool hasLetter = false;
 
             Console.WriteLine();
             var random = new Random();
             var word = random.Next(yinzWords.Length);
             string answer = yinzWords[word];
-            string playAgain = "";
+            string playAgain = "y";
             //StringBuilder newWord = new StringBuilder(word);
 
             //loop while ? while
-            while (answer.Length > correct)
-            { 
-                Console.WriteLine($"Your word is {answer.Length} letters long!");
+            Console.WriteLine($"Your word is {answer.Length} letters long!");
+
+            while (answer.Length > correct && incorrect < 5 && playAgain == "y")
+            {
                 Console.WriteLine();
                 Console.WriteLine("Guess a letter, or if you know the answer, spell out the whole word.");
 
@@ -72,28 +74,35 @@ namespace YinzerHangman
                 //user only guessed a single lette
                 else if (guess.Length == 1)
                 {
-                    foreach (char singleAnswer in answer)
+                    if (!answer.Contains(guess))
                     {
-                        if (guess.Contains(singleAnswer))
+                        Console.WriteLine("The word doesn't contain that letter!");
+                        incorrect++;
+                        Console.WriteLine();
+                        Console.WriteLine($"You have made {incorrect} attempts, {5 - incorrect} attemps remain");
+                    }
+                    else
+                    {
+
+                        int numberOfTimes = 0;
+
+                        for (int i = 0; i < answer.Length; i++)
                         {
-                            Console.WriteLine($"{guess} was found in the word! Make your next letter guess or enter word!");
-                            correct++;
-                            if (correct == answer.Length)
+                            if (guess[0] == answer[i])
                             {
-                                Console.WriteLine($"The word is {answer}. You win!");
+                                hasLetter = true;
+                                correct++;
+                                numberOfTimes++;
+                                Console.WriteLine();
                             }
                         }
-                        else if(!guess.Contains(singleAnswer)){
-                            Console.WriteLine("The word doesn't contain that letter!");
-                            incorrect++;
-                        }
-
+                        Console.WriteLine($"{guess} is in the word {numberOfTimes} times!");
                     }
                 }
 
             }
-            while (answer.Length == correct || incorrect == 5)
-                
+                if(answer.Length == correct || incorrect == 5)
+
                 {
                     Console.WriteLine("Would you like to play again?");
                     Console.WriteLine();
@@ -121,6 +130,6 @@ namespace YinzerHangman
                     }
                 }
 
+            }
         }
     }
-}
