@@ -67,31 +67,16 @@ namespace YinzerHangman
                 Console.WriteLine();
 
                 string[] yinzWords = {
-                "shahr",
-                "yinz",
-                "clahdy",
-                "jagoff",
-                "dahntahn",
-                "grahnd bees",
-                "rahndabaht",
-                "slippy",
-                "gumband",
-                "seent",
-                "cousint",
-                "friggin",
-                "crick",
-                "arn",
-                "worsh",
-                "sweeper",
-                "spickett",
-                "prolly",
-                "zak same",
-                "lahsy",
-                "jagger bush",
-                "up air",
-                "blesshew",
-                "bo da yous"
-            };
+                "Yinz","Clahdy","Jagoff","Dahntahn", "Grahnd bees","Rahn-da-baht","Slippy","Gumband","Seent","Cousint","Friggin","Crick",
+                "Irn", "Worsh","Sweeper","Spickett","Prolly","Zak same","Lahsy","Jagger bush","Up air","Da-Boat-a-ya","Nebby","N'at","Gutchies",
+                "Buggy", "Jumbo","Chipped-Chopped ham","Red Up","Jeet Jet?","Dippy Eggs","Pop", "Canipshun","Sammitches","Ahnno-dat",
+                "A whole nother","Airyago","Apost tu","Back'air","Bo fuss","Bowchyins","Buy Sam a drink and get his dog one too!","Can a corn",
+                "Choobinuptoo","Cole-daht-dare","Come mere","Dahn nair","Daht'et","Don't go err wit me.","Dooder Jobs","Elvis has left the building.",
+                "Hafta","Hauscome","Hay Bir Here","How's come?","Ize","Ja Wanna","Jano?","Jeez-o-man","Kennywood's Open","Lassnite",
+                "Like iss","Like 'at","Nuh-uh!!","Oh call Arnold Slick from Turtle Crick!","Oh mah gersh!","Ovaderr","Same difference","Scratch my back with a hacksaw!",
+                "Sick'n tard","Sposda","bungals","brahns","Ya Gatta Regatta!" 
+                };
+
                 int incorrect = 0;
                 int correct = 0;
                 bool hasLetter = false;
@@ -100,16 +85,19 @@ namespace YinzerHangman
 
                 do
                 {
-
+                    //Selects random word from our array
                     var random = new Random();
                     var word = random.Next(yinzWords.Length);
                     answer = yinzWords[word];
-                    string hidden = new string(answer.Select(c => Char.IsLetter(c) ? '*' : c).ToArray());
+
+                    //I asked the internet how to do this, a ternary that checks if its a letter and the asterisk to replace the letters or leaves the space/character
+                    string hidden = new string(answer.Select(c => Char.IsLetter(c) ? '*' : c == ' ' || c == '\'' || c == '-' || c == ',' || c == '?' || c == '.' ? c : ' ').ToArray());
 
                     Console.WriteLine($"Your word is {hidden}!");
                     Console.WriteLine($"And it is {answer.Length} letters");
                     Console.WriteLine();
 
+                    // makes sure that you haven't guessed the word or run out of guesses
                     while (correct < 5 && incorrect < 5)
                     {
                         Console.WriteLine();
@@ -123,6 +111,7 @@ namespace YinzerHangman
                             if (guess.ToLower() != answer.ToLower())
                             {
                                 Console.WriteLine("I'm sorry, that was an incorrect guess!");
+                                Console.WriteLine($"{hidden}");
                                 DrawHangman(incorrect);
                             }
                             // They guessed the correct word and win the game.
@@ -157,17 +146,27 @@ namespace YinzerHangman
                                 //number of times a letter appears in a word, in case more than once
                                 int numberOfTimes = 0;
 
-                                //create a CharArray to hold hidden
+                                /* create a CharArray to hold letters asterisk and reveal them 
+                                 as we loop through the length answer checking for guesses */
+                                
                                 char[] reveal = hidden.ToCharArray();
                                 for (int i = 0; i < answer.Length; i++)
                                 {
-                                    if (guess[0] == answer[i])
+                                    // this checks if your guess is in the word
+                                    // then reveals that letter as many times as it appears in the word
+
+                                    if (guess.ToLower()[0] == answer.ToLower()[i])
                                     {
                                         hasLetter = true;
                                         correct++;
                                         numberOfTimes++;
                                         reveal[i] = guess[0];
                                         Console.WriteLine();
+
+                                        // if you guess correctly and haven't guessed all of the letters
+
+                                        /* I added the number of times so that if the letter appears multiple
+                                        in the word, it will only Console.WriteLine one time */
 
                                         if (answer.Length != correct && numberOfTimes >= 1)
                                         {
@@ -193,6 +192,7 @@ namespace YinzerHangman
                         }
 
                     }
+                    // This runs after you have guessed the word or have ran out of guesses
 
                     Console.WriteLine("Would you like to play again?");
                     Console.WriteLine();
@@ -223,7 +223,8 @@ namespace YinzerHangman
                         playAgain = Console.ReadLine();
 
                     }
-                } while (playAgain.ToLower() == "y" || playAgain.ToLower() == "yes");
+                } // this loop condition is needed to start the game over again after selecting yes to play again
+                  while (playAgain.ToLower() == "y" || playAgain.ToLower() == "yes");
 
             }
         }
