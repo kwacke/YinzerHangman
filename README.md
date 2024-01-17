@@ -1,6 +1,6 @@
 # Yinzer Hangman
 
-Yinzer Hangman is a console-based hangman game with a Pittsburghese twist.
+Yinzer Hangman is a console-based hangman game with a Pittsburghese twist. This is the first  attempt and version of the game. I wanted to wrie a command line interface program just to code. My goal was make it work and I'm working version 2 which will add more OOP principles.
 
 ## Getting Started
 
