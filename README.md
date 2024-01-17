@@ -1,4 +1,4 @@
-Yinzer Hangman
+
 Yinzer Hangman is a console-based hangman game with a Pittsburghese twist. Built for fun and as a portfolio piece to enhance my job search, this project represents my first attempt and version of the game. I aimed to create a command-line interface program for the sheer joy of coding. Now, as I work on version 2, I am incorporating more Object-Oriented Programming (OOP) principles.
 
 Getting Started
