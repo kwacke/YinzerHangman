@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Channels;
 namespace YinzerHangman
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public void Main(string[] args)
         {
 
             Console.WriteLine("Hey yinz, gather 'round! We got ourselves a real n'at hangman game goin' on.");
@@ -110,7 +110,7 @@ namespace YinzerHangman
                 var selectedWord = yinzWords.ElementAt(random.Next(yinzWords.Count));
                 answer = selectedWord.Key;
 
-                //I asked the internet how to do this, a ternary that checks if its a letter and the asterisk to replace the letters or leaves the space/character
+                //I asked the internet how to do this, a ternary that checks if its a letter to replace with an asteriks or leaves the symbol or space if not a letter
                 string hidden = new string(answer.Select(c => Char.IsLetter(c) ? '*' : c == ' ' || c == '\'' || c == '-' || c == ',' || c == '?' || c == '.' ? c : ' ').ToArray());
 
                 //Console.WriteLine($"Your word is {hidden}!");
@@ -313,6 +313,7 @@ namespace YinzerHangman
                 default:
                     Console.WriteLine("Invalid step number.");
                     break;
+
             }
         }
 
