@@ -1,6 +1,6 @@
 # Yinzer Hangman
 
-Yinzer Hangman is a console-based hangman game with a Pittsburghese twist.
+Yinzer Hangman is a console-based hangman game with a Pittsburghese twist. Built for fun and as a portfolio piece to enhance my job search, this project represents my first attempt and version of the game. I aimed to create a command-line interface program for the sheer joy of coding. Now, as I work on version 2, I am incorporating more Object-Oriented Programming (OOP) principles.
 
 ## Getting Started
 
@@ -39,7 +39,7 @@ Yinzer Hangman is a console-based hangman game with a Pittsburghese twist.
 
 ## Customization
 
-- Customize the list of Pittsburghese words in the `yinzWords` array.
+- Customize the list of Pittsburghese words and their hints in the `yinzWords` Dictionary.
 - Modify game rules and structure in the `Main` method.
 
 ## Contributing
@@ -53,5 +53,9 @@ This project is licensed under the [MIT License](LICENSE).
 ## Acknowledgments
 
 - Thanks to Pittsburgh and its unique dialect for inspiring this game.
+- Thanks to Tech Elevator for teaching me how to code.
+
+**Motivation:**
+I built Yinzer Hangman for the joy of coding and as a meaningful addition to my portfolio, aiming to showcase my skills and passion during my job search.
 
 Have fun playing Yinzer Hangman!
